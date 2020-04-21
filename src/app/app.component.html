@@ -3,5 +3,6 @@
         <h1> Learn-E-Learn </h1>
         <p class="description"> keeping track of all the good youtube videos </p>
     </header>
-    <mw-media-item></mw-media-item>
+    <mw-media-item (delete)="onMediaItemDelete($event)"
+        [mediaItem]="firstMediaItem"></mw-media-item>
 </section>
