@@ -10,13 +10,13 @@
     margin: 0 12px 12px 0;
   }
   h2 {
-    font-size: 1.6em;
+    font-size: 1.3em;
     flex: 1;
   }
-  :host(.medium-movies) {
+  :host(.medium-single) {
     border-color: #53ace4;
   }
-  :host(.medium-movies) > h2 {
+  :host(.medium-single) > h2 {
     color: #53ace4;
   }
   :host(.medium-series) {

@@ -11,12 +11,12 @@ export class AppComponent {
 
   firstMediaItem = {
     id: 1, 
-    name: 'Firebug', 
+    name: 'Anchor in hope', 
     source: 'https://www.youtube.com/embed/RoSO3_0Ufr0',
     medium: 'Series', 
-    category: 'Science Fiction', 
+    category: 'Calm Yoga', 
     year: 2010, 
-    watchedOn: 1294532092, 
+    watchedOn: null, 
     isFavorite: false
   }
 
