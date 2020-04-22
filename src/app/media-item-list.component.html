@@ -1,9 +1,12 @@
+<header>
+    <h2> Categories: </h2>
+    <div> {{ mediaItems | categoryList }} </div>
+</header>
+
 <section>
-    <header>
-        <div> {{ mediaItems | categoryList }} </div>
-    </header>
     <mw-media-item *ngFor="let mediaItem of mediaItems"
         [mediaItem]="mediaItem"
         (delete)="onMediaItemDelete($event)"
+        (watch)="onMediaItemWatch($event)"
         [ngClass]=" { 'medium-single': mediaItem.medium === 'Single', 'medium-series': mediaItem.medium === 'Series'} "></mw-media-item>
 </section>

@@ -1,4 +1,4 @@
-<h2> {{ mediaItem.name | slice: 0: 20 | uppercase }} </h2>
+<h2> {{ mediaItem.name }} </h2>
 <iframe width="128" height="72" [src]="mediaItem.source | safe"  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <div *ngIf="mediaItem.watchedOn">{{ mediaItem.watchedOn }}</div>
 <div>{{ mediaItem.category }}</div>
@@ -14,7 +14,7 @@
   <a (click)="onDelete()" class="delete">
     remove
   </a>
-  <a class="details">
+  <a (click)="onWatch()" class="details">
     watch
   </a>
 </div>

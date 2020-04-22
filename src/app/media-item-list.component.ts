@@ -42,4 +42,7 @@ export class MediaItemListComponent {
     ]
 
     onMediaItemDelete(mediaItem) {}
+    onMediaItemWatch(link) {
+        // implement router to original youtube page
+    }
 }
