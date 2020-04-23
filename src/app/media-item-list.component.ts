@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { MediaItemService } from './media-item.service'
+import { Router } from '@angular/router'
 
 @Component({
     selector: "mw-media-item-list", 
@@ -11,16 +12,16 @@ export class MediaItemListComponent implements OnInit{
 
     mediaItems;
 
-    constructor(private mediaItemService: MediaItemService) {}
+    constructor(private mediaItemService: MediaItemService, private router: Router) {}
 
     ngOnInit() {
         this.mediaItems = this.mediaItemService.get();
     }
 
-    onMediaItemDelete(mediaItem) {
-        this.mediaItemService.delete(mediaItem)
-    }
-    onMediaItemWatch(link) {
-        // implement router to original youtube page
+    onMediaItemDelete(mediaItem) {}
+    onMediaItemWatch(mediaId) {
+        // implement router to show video and open to start quizz
+        let mediaItem = this.mediaItems.find( ({id}) => id === mediaId)
+        this.router.navigate(['/courses', mediaId]);
     }
 }

@@ -12,6 +12,8 @@ import { categoryListPipe } from './category-list.pipe';
 import { MediaItemFormComponent } from './media-item-form.component';
 import { lookupListToken, lookupList } from './providers';
 import { NavBarComponent } from './nav-bar/nav-bar.component'
+import { routing } from './app.routing';
+import { VideoWatcherComponent } from './video-watcher/video-watcher.component'
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { NavBarComponent } from './nav-bar/nav-bar.component'
     FavoriteDirective,
     categoryListPipe,
     SafePipe,
-    NavBarComponent
+    NavBarComponent,
+    VideoWatcherComponent
   ],
 
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    routing
   ],
   providers: [
     { provide: lookupListToken, useValue: lookupList}

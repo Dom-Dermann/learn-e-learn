@@ -16,8 +16,8 @@ export class MediaItemComponent{
         this.delete.emit(this.mediaItem);
     }
 
-    onWatch() {
+    onWatchClick() {
         console.log("watching...");
-        this.watch.emit(this.mediaItem.source)
+        this.watch.emit(this.mediaItem.id)
     }
 }
