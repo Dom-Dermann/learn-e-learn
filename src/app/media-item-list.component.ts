@@ -20,8 +20,6 @@ export class MediaItemListComponent implements OnInit{
 
     onMediaItemDelete(mediaItem) {}
     onMediaItemWatch(mediaId) {
-        // implement router to show video and open to start quizz
-        let mediaItem = this.mediaItems.find( ({id}) => id === mediaId)
         this.router.navigate(['/courses', mediaId]);
     }
 }

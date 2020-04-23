@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router'
+import { MediaItemService } from '../media-item.service'
 
 @Component({
   selector: 'app-video-watcher',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoWatcherComponent implements OnInit {
 
-  constructor() { }
+  public videoSrc;
+
+  constructor(private route: ActivatedRoute, private mediaItemService: MediaItemService) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe( params => {
+      let videoId = params.get('course')
+      
+      let mediaItems;
+      mediaItems = this.mediaItemService.get();
+      let video = mediaItems.find( ({id}) => id == videoId)
+      this.videoSrc = video.source
+    })
   }
+
+
 
 }
