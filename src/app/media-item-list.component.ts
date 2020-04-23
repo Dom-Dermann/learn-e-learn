@@ -1,4 +1,5 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
+import { MediaItemService } from './media-item.service'
 
 @Component({
     selector: "mw-media-item-list", 
@@ -6,42 +7,19 @@ import { Component } from '@angular/core'
     styleUrls: ["./media-item-list.component.scss"]
 })
 
-export class MediaItemListComponent {
-    
-    mediaItems = [
-        {
-            id: 1, 
-            name: 'Anchor in hope', 
-            source: 'https://www.youtube.com/embed/RoSO3_0Ufr0',
-            medium: 'Series', 
-            category: 'Calm Yoga', 
-            year: 2010, 
-            watchedOn: null, 
-            isFavorite: false
-        },
-        {
-            id: 2, 
-            name: 'Calming Practice', 
-            source: 'https://www.youtube.com/embed/Enz98dDXQfY',
-            medium: 'Series', 
-            category: 'Calm Yoga', 
-            year: 2011, 
-            watchedOn: null, 
-            isFavorite: false
-        },
-        {
-            id: 3, 
-            name: 'Yoga For Lower Back', 
-            source: 'https://www.youtube.com/embed/2xF_teT2_V0',
-            medium: 'Single', 
-            category: 'Yoga for Back Pain', 
-            year: 2012, 
-            watchedOn: null, 
-            isFavorite: true
-        }
-    ]
+export class MediaItemListComponent implements OnInit{
 
-    onMediaItemDelete(mediaItem) {}
+    mediaItems;
+
+    constructor(private mediaItemService: MediaItemService) {}
+
+    ngOnInit() {
+        this.mediaItems = this.mediaItemService.get();
+    }
+
+    onMediaItemDelete(mediaItem) {
+        this.mediaItemService.delete(mediaItem)
+    }
     onMediaItemWatch(link) {
         // implement router to original youtube page
     }

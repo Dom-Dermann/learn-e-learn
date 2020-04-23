@@ -10,6 +10,7 @@ import { SafePipe } from './url-sanitizer-pipe';
 import { FavoriteDirective } from './favorite.directive';
 import { categoryListPipe } from './category-list.pipe';
 import { MediaItemFormComponent } from './media-item-form.component';
+import { lookupListToken, lookupList } from './providers';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { MediaItemFormComponent } from './media-item-form.component';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: lookupListToken, useValue: lookupList}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
