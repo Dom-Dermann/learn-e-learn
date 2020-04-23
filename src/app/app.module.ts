@@ -11,6 +11,7 @@ import { FavoriteDirective } from './favorite.directive';
 import { categoryListPipe } from './category-list.pipe';
 import { MediaItemFormComponent } from './media-item-form.component';
 import { lookupListToken, lookupList } from './providers';
+import { NavBarComponent } from './nav-bar/nav-bar.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { lookupListToken, lookupList } from './providers';
     MediaItemFormComponent,
     FavoriteDirective,
     categoryListPipe,
-    SafePipe
+    SafePipe,
+    NavBarComponent
   ],
 
   imports: [
