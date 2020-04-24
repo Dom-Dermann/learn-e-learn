@@ -11,6 +11,7 @@ export class VideoWatcherComponent implements OnInit {
 
   public videoItem;
   public videoSrc;
+  public isOn: boolean = false;
 
   constructor(private route: ActivatedRoute, private mediaItemService: MediaItemService) { }
 

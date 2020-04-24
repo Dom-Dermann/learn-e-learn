@@ -15,7 +15,15 @@ export class MediaItemService {
             category: 'Calm Yoga', 
             year: 2010, 
             watchedOn: null, 
-            isFavorite: false
+            isFavorite: false,
+            questions: [
+                {
+                    id: 1, 
+                    question: "What color shit did Adrian wear in the video?",
+                    correct: "red",
+                    options: ["green", "purple", "turquois"]
+                }
+            ]
         },
         {
             id: 2, 

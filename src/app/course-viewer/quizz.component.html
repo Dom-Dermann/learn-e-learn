@@ -1,0 +1,10 @@
+<h2> Take the quizz to master this section </h2>
+<p class="counter"> Answers: 1/10 </p>
+
+<div> {{ currentQuestion }} </div>
+
+<table style="width:100%">
+    <tr>
+      <td *ngFor="let answer of answers"> <button>{{ answer }}</button> </td>
+    </tr>
+</table>

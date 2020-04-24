@@ -3,6 +3,7 @@ import { VideoWatcherComponent } from './course-viewer.component';
 import { CommonModule } from '@angular/common';
 import { videoWatcherRouting } from './course-viewer.routing';
 import { PipesModule } from '../pipes/pipes.module';
+import { QuizzComponent } from './quizz.component';
 
 @NgModule({
     imports:[
@@ -11,7 +12,8 @@ import { PipesModule } from '../pipes/pipes.module';
         videoWatcherRouting
     ],
     declarations: [
-        VideoWatcherComponent
+        VideoWatcherComponent,
+        QuizzComponent
     ]
 })
 

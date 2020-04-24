@@ -1,7 +1,8 @@
 <section>
     <h2> {{ videoItem.name }} </h2>
-    <button class="quizz_start"> Start Quizz </button>
+    <button class="quizz_start" (click)="isOn = true"> Start Quizz </button>
     <div class="videoViewer">
         <iframe width="100%" height="100%" [src]="videoSrc | safe"  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
+    <quizz-component class="quizz" *ngIf="isOn"></quizz-component>
 </section>
