@@ -11,7 +11,7 @@ import { MediaItemService } from '../media-item.service';
 export class QuizzComponent {
     public currentQuestion: String;
     public answers: String[];
-    private questionList: [];
+    private questionList;
   
     constructor(private route: ActivatedRoute, private mediaItemService: MediaItemService) { }
   
