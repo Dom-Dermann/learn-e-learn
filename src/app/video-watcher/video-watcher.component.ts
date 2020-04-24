@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router'
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router'
 import { MediaItemService } from '../media-item.service'
 
 @Component({
@@ -9,6 +9,7 @@ import { MediaItemService } from '../media-item.service'
 })
 export class VideoWatcherComponent implements OnInit {
 
+  public videoItem;
   public videoSrc;
 
   constructor(private route: ActivatedRoute, private mediaItemService: MediaItemService) { }
@@ -19,11 +20,8 @@ export class VideoWatcherComponent implements OnInit {
       
       let mediaItems;
       mediaItems = this.mediaItemService.get();
-      let video = mediaItems.find( ({id}) => id == videoId)
-      this.videoSrc = video.source
+      this.videoItem = mediaItems.find( ({id}) => id == videoId)
+      this.videoSrc = this.videoItem.source
     })
   }
-
-
-
 }

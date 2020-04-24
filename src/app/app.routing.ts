@@ -1,12 +1,18 @@
 import { Routes, RouterModule } from '@angular/router'
-import { MediaItemFormComponent } from './media-item-form.component';
 import { MediaItemListComponent } from './media-item-list.component';
-import { VideoWatcherComponent } from './video-watcher/video-watcher.component';
 
 const appRoutes: Routes = [
-    { path : 'add', component: MediaItemFormComponent},
+    {
+        path: 'subscribe', 
+        loadChildren: () => import('./subscribe-page/subscribe.module')
+            .then(m => m.SubscriptionModule)
+    },
+    {   
+        path : 'courses/:course', 
+        loadChildren: () => import('./video-watcher/video-watcher.module')
+            .then(m => m.VideoWatcherModule)
+    },
     { path : ':medium', component: MediaItemListComponent},
-    { path : 'courses/:course', component: VideoWatcherComponent},
     { path : '', redirectTo: 'home', pathMatch: 'full'}
 ];
 
