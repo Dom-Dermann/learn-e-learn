@@ -9,7 +9,7 @@ const appRoutes: Routes = [
     },
     {   
         path : 'courses/:course', 
-        loadChildren: () => import('./video-watcher/video-watcher.module')
+        loadChildren: () => import('./course-viewer/course-viewer.module')
             .then(m => m.VideoWatcherModule)
     },
     { path : ':medium', component: MediaItemListComponent},

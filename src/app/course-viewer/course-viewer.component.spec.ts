@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VideoWatcherComponent } from './video-watcher.component';
+import { VideoWatcherComponent } from './course-viewer.component';
 
 describe('VideoWatcherComponent', () => {
   let component: VideoWatcherComponent;

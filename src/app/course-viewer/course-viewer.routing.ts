@@ -1,5 +1,5 @@
 import { Routes, RouterModule } from "@angular/router";
-import { VideoWatcherComponent } from './video-watcher.component';
+import { VideoWatcherComponent } from './course-viewer.component';
 
 const videoWatcherRoutes: Routes = [
     {
