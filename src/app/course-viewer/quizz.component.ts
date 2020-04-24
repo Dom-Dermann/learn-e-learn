@@ -26,9 +26,11 @@ export class QuizzComponent {
         this.questionList = courseDetaisl['questions']
 
         // Todo: load random question
-        if (this.questionList != undefined) {
+        try {
             this.answers = this.questionList[0].options
             this.currentQuestion = this.questionList[0].question
+        } catch (error) {
+            console.error(console.error());
         }
       })
     }
