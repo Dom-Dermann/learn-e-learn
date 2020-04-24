@@ -17,17 +17,20 @@ export class MediaItemFormComponent implements OnInit {
 
     ngOnInit() {
         this.form = this.formBuild.group({
-            medium : this.formBuild.control('Single'),
+            gender : this.formBuild.control('undefined', Validators.required),
             name : this.formBuild.control('', Validators.compose([
                 Validators.required, 
                 Validators.pattern('[\\w\\-\\s\\/]+')
             ])),
-            category : this.formBuild.control(''),
+            email : this.formBuild.control('example@email.com', Validators.compose([
+                Validators.required, 
+                Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")
+            ])),
             year : this.formBuild.control(''),
         });
     }
 
-    onSubmit(mediaItem) {
-        this.mediaItemService.add(mediaItem)
+    onSubmit(userDetails) {
+        console.log(userDetails)
     }
 }

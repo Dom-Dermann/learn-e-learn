@@ -12,4 +12,15 @@
     position: absolute;
     top: 0;
     width: 100%;
+    max-width: 1400px;
+    max-height: 788px;
+}
+
+h2 {
+    display: inline-block;
+}
+
+.quizz_start {
+    margin: 25px;
+    float: right;
 }
