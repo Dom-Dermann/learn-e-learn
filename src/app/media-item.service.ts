@@ -19,7 +19,7 @@ export class MediaItemService {
             questions: [
                 {
                     id: 1, 
-                    question: "What color shit did Adrian wear in the video?",
+                    question: "What color shirt did Adrian wear in the video?",
                     correct: "red",
                     options: ["green", "purple", "turquois"]
                 }
