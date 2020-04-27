@@ -1,5 +1,6 @@
 import { Routes, RouterModule } from '@angular/router'
 import { MediaItemListComponent } from './media-item-list.component';
+import { AboutComponent } from './about.component';
 
 const appRoutes: Routes = [
     {
@@ -12,7 +13,8 @@ const appRoutes: Routes = [
         loadChildren: () => import('./course-viewer/course-viewer.module')
             .then(m => m.VideoWatcherModule)
     },
-    { path : ':medium', component: MediaItemListComponent},
+    { path : 'home', component: MediaItemListComponent},
+    { path : 'about', component: AboutComponent},
     { path : '', redirectTo: 'home', pathMatch: 'full'}
 ];
 
