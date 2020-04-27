@@ -18,6 +18,6 @@ export class MediaItemComponent{
 
     onWatchClick() {
         console.log("watching...");
-        this.watch.emit(this.mediaItem.id)
+        this.watch.emit(this.mediaItem)
     }
 }

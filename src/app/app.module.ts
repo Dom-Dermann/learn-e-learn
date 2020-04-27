@@ -11,6 +11,7 @@ import { lookupListToken, lookupList } from './providers';
 import { NavBarComponent } from './nav-bar/nav-bar.component'
 import { routing } from './app.routing';
 import { PipesModule } from './pipes/pipes.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PipesModule } from './pipes/pipes.module';
     BrowserModule,
     PipesModule,
     AppRoutingModule,
-    routing
+    routing,
+    BrowserAnimationsModule
   ],
   providers: [
     { provide: lookupListToken, useValue: lookupList}

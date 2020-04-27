@@ -3,8 +3,12 @@
 
 <div> {{ currentQuestion }} </div>
 
-<table style="width:100%">
+<table *ngIf="quizzType === 'multiple'" style="width:100%">
     <tr>
       <td *ngFor="let answer of answers"> <button>{{ answer }}</button> </td>
     </tr>
 </table>
+
+<mat-slider *ngIf="quizzType === 'slider'"></mat-slider>
+
+<button (click)="submitClicked()" type="submit"> Submit </button>

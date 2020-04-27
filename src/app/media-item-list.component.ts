@@ -19,7 +19,7 @@ export class MediaItemListComponent implements OnInit{
     }
 
     onMediaItemDelete(mediaItem) {}
-    onMediaItemWatch(mediaId) {
-        this.router.navigate(['/courses', mediaId]);
+    onMediaItemWatch(mediaItem) {
+        this.router.navigate(['/courses', mediaItem.id]);
     }
 }

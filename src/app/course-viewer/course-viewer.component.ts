@@ -1,7 +1,6 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
 import { MediaItemService } from '../media-item.service'
-import { QuizzComponent } from './quizz.component';
 
 @Component({
   selector: 'app-video-watcher',
@@ -38,5 +37,9 @@ export class VideoWatcherComponent implements OnInit, AfterViewInit {
     this.isOn = true;
     // Todo: find a way to now hardcode the wait time. 
     setTimeout( ()=> this.quizzDiv.nativeElement.scrollIntoView({behavior: "smooth", block: "center"}), 500);
+  }
+
+  submitClicked(videoObject) {
+    this.videoSrc = videoObject.url
   }
 }
