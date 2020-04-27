@@ -9,6 +9,10 @@
     </tr>
 </table>
 
-<mat-slider *ngIf="quizzType === 'slider'"></mat-slider>
+<mat-slider [max]=10 
+            [min]=1 
+            [step]=1
+            [thumbLabel]="true"
+             *ngIf="quizzType === 'slider'" #slider></mat-slider>
 
 <button (click)="submitClicked()" type="submit"> Submit </button>
