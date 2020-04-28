@@ -29,7 +29,7 @@ export class VideoWatcherComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log(this.quizzDiv.nativeElement)
+
   }
   
 

@@ -1,6 +1,8 @@
 import { Component, Output, EventEmitter } from "@angular/core";
 import { ActivatedRoute } from '@angular/router';
 import { MediaItemService } from '../media-item.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { QuizzStateService } from './quizz-state.service'
 
 @Component({
     selector: 'quizz-component', 
@@ -12,12 +14,15 @@ export class QuizzComponent {
     public currentQuestion: String;
     public answers: String[];
     public quizzType;
+    public score = 0;
     private questionList;
     private videoObject;
     private questionObject;
-    @Output() submit = new EventEmitter(); 
+    formSlide: FormGroup;
+    formMultiple: FormGroup;
+    @Output() submitScore = new EventEmitter(); 
   
-    constructor(private route: ActivatedRoute, private mediaItemService: MediaItemService) { }
+    constructor(private route: ActivatedRoute, private mediaItemService: MediaItemService, private formBuilder: FormBuilder, private quizzStateService: QuizzStateService) { }
   
     ngOnInit(): void {
       this.route.paramMap.subscribe( params => {
@@ -42,10 +47,22 @@ export class QuizzComponent {
             console.error(console.error());
         }
       })
+
+      // initialize forms
+      this.formSlide = this.formBuilder.group({
+        sliderAnswer : this.formBuilder.control(1, Validators.required)
+      })
+
+      this.formMultiple = this.formBuilder.group({
+        a : this.formBuilder.control('')
+      })
+
     }
 
-    submitClicked() {
-      this.submit.emit(this.videoObject);
+    submitSlideClicked(score) {
+      this.submitScore.emit(this.videoObject);
+      this.quizzStateService.incrementHomoScore(score.sliderAnswer);
+      this.score = this.quizzStateService.getHomoScore();
       this.currentQuestion = this.questionObject.question
     }
 }

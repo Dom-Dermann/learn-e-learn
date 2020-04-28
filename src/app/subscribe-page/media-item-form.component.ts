@@ -13,7 +13,7 @@ import { lookupListToken } from '../providers';
 export class MediaItemFormComponent implements OnInit {
     form: FormGroup;
 
-    constructor(private formBuild: FormBuilder, private mediaItemService: MediaItemService, @Inject(lookupListToken) public lookupLists) {}
+    constructor(private formBuild: FormBuilder, @Inject(lookupListToken) public lookupLists) {}
 
     ngOnInit() {
         this.form = this.formBuild.group({

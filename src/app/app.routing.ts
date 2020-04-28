@@ -11,7 +11,7 @@ const appRoutes: Routes = [
     {   
         path : 'courses/:course', 
         loadChildren: () => import('./course-viewer/course-viewer.module')
-            .then(m => m.VideoWatcherModule)
+            .then(m => m.CourseViewerModule)
     },
     { path : 'home', component: MediaItemListComponent},
     { path : 'about', component: AboutComponent},
