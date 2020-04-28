@@ -1,18 +1,30 @@
 <h2> Take the quizz to master this section </h2>
-<p class="counter"> Answers: 1/10 </p>
+<p class="counter" *ngIf="quizzType === 'multiple'"> Answers: 1/10 </p>
 
-<div> {{ currentQuestion }} </div>
+<div id="question"> {{ currentQuestion }} </div>
 
-<table *ngIf="quizzType === 'multiple'" style="width:100%">
-    <tr>
-      <td *ngFor="let answer of answers"> <button>{{ answer }}</button> </td>
-    </tr>
-</table>
+<!-- multiple choice question -->
+<div>
+  <form>
+    <table *ngIf="quizzType === 'multiple'" style="width:100%">
+        <tr>
+          <td *ngFor="let answer of answers"> <button>{{ answer }}</button> </td>
+        </tr>
+    </table>
+  </form>
+</div>
 
-<mat-slider [max]=10 
-            [min]=1 
-            [step]=1
-            [thumbLabel]="true"
-             *ngIf="quizzType === 'slider'" #slider></mat-slider>
+<!-- question with slider -->
+<div>
+  <form *ngIf="quizzType === 'slider'">
+    <span id="min">1</span>
+    <mat-slider [max]=10 
+                [min]=1 
+                [step]=1
+                [thumbLabel]="true"
+                [value]=1></mat-slider>
+    <span id="max">10</span>
+    <button (click)="submitClicked()" type="submit"> Submit </button>
+  </form>
+</div>
 
-<button (click)="submitClicked()" type="submit"> Submit </button>

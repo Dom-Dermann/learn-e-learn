@@ -6,8 +6,33 @@ h2 {
     background-color: blue;
     border-radius: 5px;
     color: white;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-#slider {
-    width: 400px;
+#question {
+    margin-left: 50px;
+}
+
+#min {
+    margin-left: 50px;
+}
+
+// slider stuff
+.mat-slider-horizontal {
+    width: 50%;
+    margin-top: 20px;
+}
+
+.mat-slider-thumb-label {
+    transform: rotate(45deg) !important;
+    border-radius: 50% 50% 0 !important;
+}
+
+.mat-slider-thumb {
+    transform: scale(0) !important;
+}
+
+.mat-slider-thumb-label-text {
+    opacity: 1 !important;
 }
