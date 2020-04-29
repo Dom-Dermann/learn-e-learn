@@ -1,11 +1,11 @@
 <section>
     <h2> {{ courseItem.name }} </h2>
     <button class="quizz_start" (click)="turnQuizzon()"> Start Quizz </button>
+    <div #quizz>
+      <quizz-component (submitScore)="submitClicked($event)" class="quizz" #quizzComponent *ngIf="isOn"></quizz-component>
+  </div>
     <div class="videoViewer">
         <iframe [src]="currentVideoUrl | safe" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div #quizz>
-        <quizz-component (submitScore)="submitClicked($event)" class="quizz" #quizzComponent *ngIf="isOn"></quizz-component>
     </div>
     <cert-pop class="my-prompt" [isOpen]="popUpOpen">
         <div class="box">

@@ -5,6 +5,7 @@
     height: 0;
     overflow: hidden;
     margin-left: 50px;
+    margin-right: 50px;
     margin-bottom: 20px;
 }
 
@@ -24,10 +25,14 @@ h2 {
 .quizz_start {
     float: right;
     margin: 25px;
+    background-color: #2A9D8F;
+    color: #E9C46A;
+    padding: 3px;
+    border-radius: 2px;
 }
 
 #okButton {
-    background-color: #33AF58;
+    background-color: #2A9D8F;
 }
 
 #certPic {

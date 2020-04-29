@@ -11,6 +11,13 @@ export class MediaItemService {
             id: 1, 
             name: 'Anchor in hope', 
             source: 'https://www.youtube.com/embed/RoSO3_0Ufr0',
+            videos: [
+                {
+                    id: 1, 
+                    title: "Adrienne is cool", 
+                    url: 'https://www.youtube.com/embed/RoSO3_0Ufr0'
+                }
+            ],
             category: 'Calm Yoga', 
             isFavorite: false,
             quizzType: 'multiple',
