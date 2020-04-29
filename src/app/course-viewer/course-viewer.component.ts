@@ -13,6 +13,8 @@ export class CourseViewerComponent implements OnInit {
   public courseItem;
   public currentVideoUrl;
   public isOn: boolean = false;
+  public score;
+  public result_text = "You're a complete noob."
   private currentVideo = 1;
   private videosInCourse;                       // amount of videos in this course  
   popUpOpen = false;                            // determines if cert-pop pop-up is shown
@@ -41,7 +43,7 @@ export class CourseViewerComponent implements OnInit {
   submitClicked(score) {
     this.currentVideo = this.currentVideo + 1;
     this.displayNextpage()
-    console.log(score)
+    this.score = score
   }
 
   displayNextpage() {
@@ -51,7 +53,6 @@ export class CourseViewerComponent implements OnInit {
     } else {
       // end of course initiated
       this.openPopUp()
-
     }
   }
 

@@ -1,22 +1,11 @@
 .videoViewer {
-    overflow: hidden;
-    // calculated from aspect ratio - 16:9 = 0.5625
-    padding-top: 56.25%;
-    position: relative;
-    display: block;
-    margin-left: 50px;
-    margin-bottom: 20px;
+    display: flex;
 }
 
 .videoViewer iframe {
-    border: 0;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    max-width: 1400px;
-    max-height: 788px;
+    height: 800px;
+    width: auto;
+    justify-content: center;
 }
 
 h2 {
