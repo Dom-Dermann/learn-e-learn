@@ -2,7 +2,7 @@
     <h2> {{ courseItem.name }} </h2>
     <button class="quizz_start" (click)="turnQuizzon()"> Start Quizz </button>
     <div class="videoViewer">
-        <iframe width="100%" height="100%" [src]="currentVideoUrl | safe"  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe [src]="currentVideoUrl | safe" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div #quizz>
         <quizz-component (submitScore)="submitClicked($event)" class="quizz" #quizzComponent *ngIf="isOn"></quizz-component>
@@ -15,9 +15,10 @@
           <main>
             <h2>Congrats, your score is : {{score}}</h2>
             <p>{{result_text}}</p>
+            <img id="certPic" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Japan_Expo_13_-_Precieux_-_Noob_-_P1400918.jpg" alt="picture of a noob">
           </main>
           <footer>
-            <button (click)="okPressed()">&lt;&nbsp;OK&nbsp;&gt;</button>
+            <button id="okButton" (click)="okPressed()"> Ok </button>
           </footer>
         </div>
       </cert-pop>
