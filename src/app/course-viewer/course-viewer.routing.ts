@@ -1,9 +1,7 @@
 import { Routes, RouterModule } from "@angular/router";
-import { VideoWatcherComponent } from './course-viewer.component';
+import { CourseViewerComponent } from './course-viewer.component'
 
 const videoWatcherRoutes: Routes = [
-    {
-        path: '', component: VideoWatcherComponent
-    }
+    { path: ':element', component: CourseViewerComponent }
 ]
 export const videoWatcherRouting = RouterModule.forChild(videoWatcherRoutes)

@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
 import { MediaItemService } from '../media-item.service'
 
@@ -7,29 +7,27 @@ import { MediaItemService } from '../media-item.service'
   templateUrl: './course-viewer.component.html',
   styleUrls: ['./course-viewer.component.scss']
 })
-export class VideoWatcherComponent implements OnInit, AfterViewInit {
+export class CourseViewerComponent implements OnInit {
 
-  public videoItem;
-  public videoSrc;
+  public courseItem;
+  public currentVideoUrl;
   public isOn: boolean = false;
+  private currentVideo = 1;
+  private videosInCourse;                       // amount of videos in this course  
   @ViewChild('quizz') quizzDiv: ElementRef;
-  @ViewChild('quizzComponent') quizzComponent: ElementRef;
 
   constructor(private route: ActivatedRoute, private mediaItemService: MediaItemService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe( params => {
-      let videoId = params.get('course')
+      let courseId = params.get('course')
       
       let mediaItems;
       mediaItems = this.mediaItemService.get();
-      this.videoItem = mediaItems.find( ({id}) => id == videoId)
-      this.videoSrc = this.videoItem.source
+      this.courseItem = mediaItems.find( ({id}) => id == courseId)
+      this.videosInCourse = this.courseItem.videos.length
+      this.displayNextpage()
     })
-  }
-
-  ngAfterViewInit() {
-
   }
   
 
@@ -39,7 +37,17 @@ export class VideoWatcherComponent implements OnInit, AfterViewInit {
     setTimeout( ()=> this.quizzDiv.nativeElement.scrollIntoView({behavior: "smooth", block: "center"}), 500);
   }
 
-  submitClicked(videoObject) {
-    this.videoSrc = videoObject.url
+  submitClicked(videoject) {
+    this.currentVideo = this.currentVideo + 1;
+    this.displayNextpage()
+  }
+
+  displayNextpage() {
+    if (this.currentVideo <= this.videosInCourse) {
+      const currentVideo = this.courseItem.videos.find( ({id}) => id == this.currentVideo)
+      this.currentVideoUrl = currentVideo.url
+    } else {
+      console.log("End of course reached.")
+    }
   }
 }
