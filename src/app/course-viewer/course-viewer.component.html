@@ -7,4 +7,17 @@
     <div #quizz>
         <quizz-component (submitScore)="submitClicked($event)" class="quizz" #quizzComponent *ngIf="isOn"></quizz-component>
     </div>
+    <cert-pop class="my-prompt" [isOpen]="popUpOpen">
+        <div class="box">
+          <header>
+            <span class="title">Your home office score</span>
+          </header>
+          <main>
+            Congrats, your score is : palceholder
+          </main>
+          <footer>
+            <button (click)="okPressed()">&lt;&nbsp;OK&nbsp;&gt;</button>
+          </footer>
+        </div>
+      </cert-pop>
 </section>

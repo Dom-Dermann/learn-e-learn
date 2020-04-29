@@ -14,6 +14,7 @@ export class CourseViewerComponent implements OnInit {
   public isOn: boolean = false;
   private currentVideo = 1;
   private videosInCourse;                       // amount of videos in this course  
+  popUpOpen = false;                            // determines if cert-pop pop-up is shown
   @ViewChild('quizz') quizzDiv: ElementRef;
 
   constructor(private route: ActivatedRoute, private mediaItemService: MediaItemService) { }
@@ -47,7 +48,15 @@ export class CourseViewerComponent implements OnInit {
       const currentVideo = this.courseItem.videos.find( ({id}) => id == this.currentVideo)
       this.currentVideoUrl = currentVideo.url
     } else {
-      console.log("End of course reached.")
+      this.openPopUp()
     }
+  }
+
+  openPopUp() {
+    this.popUpOpen = true;
+  }
+
+  okPressed() {
+    this.popUpOpen = false;
   }
 }

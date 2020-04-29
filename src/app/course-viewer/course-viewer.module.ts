@@ -6,6 +6,8 @@ import { QuizzComponent } from './quizz.component';
 import { MatSliderModule } from '@angular/material/slider'
 import { ReactiveFormsModule } from '@angular/forms';
 import { CourseViewerComponent } from './course-viewer.component';
+import { CertPopComponent } from './cert-pop/cert-pop.component'
+
 
 @NgModule({
     imports:[
@@ -17,7 +19,8 @@ import { CourseViewerComponent } from './course-viewer.component';
     ],
     declarations: [
         CourseViewerComponent,
-        QuizzComponent
+        QuizzComponent,
+        CertPopComponent
     ]
 })
 
