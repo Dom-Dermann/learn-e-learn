@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
 import { MediaItemService } from '../media-item.service'
+import { QuizzStateService } from './quizz-state.service';
 
 @Component({
   selector: 'app-video-watcher',
@@ -17,7 +18,7 @@ export class CourseViewerComponent implements OnInit {
   popUpOpen = false;                            // determines if cert-pop pop-up is shown
   @ViewChild('quizz') quizzDiv: ElementRef;
 
-  constructor(private route: ActivatedRoute, private mediaItemService: MediaItemService) { }
+  constructor(private route: ActivatedRoute, private mediaItemService: MediaItemService, private quizzStateService: QuizzStateService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe( params => {
@@ -31,16 +32,16 @@ export class CourseViewerComponent implements OnInit {
     })
   }
   
-
   turnQuizzon() {
     this.isOn = true;
     // Todo: find a way to now hardcode the wait time. 
     setTimeout( ()=> this.quizzDiv.nativeElement.scrollIntoView({behavior: "smooth", block: "center"}), 500);
   }
 
-  submitClicked(videoject) {
+  submitClicked(score) {
     this.currentVideo = this.currentVideo + 1;
     this.displayNextpage()
+    console.log(score)
   }
 
   displayNextpage() {
@@ -48,7 +49,9 @@ export class CourseViewerComponent implements OnInit {
       const currentVideo = this.courseItem.videos.find( ({id}) => id == this.currentVideo)
       this.currentVideoUrl = currentVideo.url
     } else {
+      // end of course initiated
       this.openPopUp()
+
     }
   }
 
@@ -58,5 +61,6 @@ export class CourseViewerComponent implements OnInit {
 
   okPressed() {
     this.popUpOpen = false;
+    this.quizzStateService.resetHomoScore()
   }
 }
