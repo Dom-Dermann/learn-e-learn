@@ -1,10 +1,10 @@
 :host {
     display: flex;
     flex-direction: column;
-    width: 140px;
+    width: 250x;
     height: 250px;
     border: 2px solid;
-    background-color: #29394b;
+    background-color: #253C78;
     padding: 10px;
     color: #bdc2c5;
     margin: 0 12px 12px 0;
@@ -12,18 +12,6 @@
   h2 {
     font-size: 1.3em;
     flex: 1;
-  }
-  :host(.medium-single) {
-    border-color: #53ace4;
-  }
-  :host(.medium-single) > h2 {
-    color: #53ace4;
-  }
-  :host(.medium-series) {
-    border-color: #45bf94;
-  }
-  :host(.medium-series) > h2 {
-    color: #45bf94;
   }
   .tools {
     margin-top: 8px;

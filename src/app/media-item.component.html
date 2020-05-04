@@ -1,5 +1,5 @@
 <h2> {{ mediaItem.name }} </h2>
-<iframe width="128" height="72" [src]="mediaItem.source | safe"  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="240" height="120" [src]="mediaItem.source | safe"  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <div *ngIf="mediaItem.watchedOn">{{ mediaItem.watchedOn }}</div>
 <div>{{ mediaItem.category }}</div>
 <div>{{ mediaItem.year }}</div>
