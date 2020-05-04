@@ -111,11 +111,35 @@ export class MediaItemService {
             questions: [
                 {
                     id: 1, 
-                    question: "How would you rate your home office skills?"
+                    question: "Bewerte Deinen Tagesrythmus"
                 },
                 {
                     id: 2, 
-                    question: "How do you like this course?"
+                    question: "Bewerte die Ergonomie Deines Arbeitsplatzes"
+                }, 
+                {
+                    id: 3,
+                    question: 'Bewerte Dein Selbstmanagement'
+                },
+                {
+                    id: 4,
+                    question: 'Bewerte Deine Frischluftzufuhr'
+                },
+                {
+                    id: 5, 
+                    question: 'Bewerte Deine Kommunikation'
+                }, 
+                {
+                    id: 6, 
+                    question: 'Bewerte Deine Sportlichkeit'
+                }, 
+                {
+                    id: 7, 
+                    question: 'Bewerte, wie Du Deine sozialen Kontakte pfelgst'
+                },
+                {
+                    id: 8,
+                    question: 'Bewerte, wieviel Abwechslung Du hast'
                 }
             ]
         }
