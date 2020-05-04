@@ -1,18 +1,23 @@
+@media (min-width: 600px) {
+    .videoViewer {
+        float: left;
+        background-color: black;
+        width: 650px;
+        height: 367px;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-bottom: 20px;
+    }
+}
+
 .videoViewer {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 35px;
-    height: 0;
-    overflow: hidden;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 20px;
+    .videoViewer {
+        width: 260px;
+        height: 147px;
+    }
 }
 
 .videoViewer iframe {
-    position: absolute;
-    top:0;
-    left: 0;
     width: 100%;
     height: 100%;
 }

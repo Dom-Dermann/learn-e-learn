@@ -1,4 +1,4 @@
-<h2> Take the quizz to master this section </h2>
+<h2> Fülle das Quizz aus, um zum nächsten Abschnitt zu kommen </h2>
 <p class="counter" *ngIf="quizzType === 'multiple'"> Current score: {{ score }} </p>
 
 <div id="question"> {{ currentQuestion }} </div>
@@ -26,7 +26,7 @@
                 [thumbLabel]="true"
                 [value]=1></mat-slider>
     <span id="max">10</span>
-    <button id="submitButton" (click)="submitSlideClicked(formSlide.value)" type="submit"> Submit </button>
+    <button id="submitButton" (click)="submitSlideClicked(formSlide.value)" type="submit"> Abschicken </button>
   </form>
 </div>
 

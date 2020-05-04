@@ -7,25 +7,27 @@
   </div>
 
   <button class="quizz_start" *ngIf="showQuizzButton" (click)="turnQuizzon()"> Start Quizz </button>
-  <div #quizz>
-    <quizz-component (submitScore)="submitClicked($event)" class="quizz" #quizzComponent *ngIf="isOn"></quizz-component>
+  <div id="quizz">
+    <quizz-component (submitScore)="submitClicked($event)" class="quizz" id="quizzComponent" *ngIf="isOn"></quizz-component>
   </div>
-    <div class="videoViewer">
-        <iframe [src]="currentVideoUrl | safe" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <cert-pop class="my-prompt" [isOpen]="popUpOpen">
-        <div class="box">
-          <header>
-            <span class="title">Deine Home Office Bewertung</span>
-          </header>
-          <main>
-            <h2>Glückwunsch, deine Bewertung ist: {{score}} <br/> Das macht dich zum {{ result_category }}</h2>
-            <p>{{ result_text }}</p>
-            <img id="certPic" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Japan_Expo_13_-_Precieux_-_Noob_-_P1400918.jpg" alt="picture of a noob">
-          </main>
-          <footer>
-            <button id="okButton" (click)="okPressed()"> Ok </button>
-          </footer>
-        </div>
-      </cert-pop>
+
+  <div class="videoViewer">
+    <iframe [src]="currentVideoUrl | safe" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <cert-pop class="my-prompt" [isOpen]="popUpOpen">
+      <div class="box">
+        <header>
+          <span class="title">Deine Home Office Bewertung</span>
+        </header>
+        <main>
+          <h2>Glückwunsch, deine Bewertung ist: {{score}} <br/> Das macht dich zum {{ result_category }}</h2>
+          <p>{{ result_text }}</p>
+          <img id="certPic" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Japan_Expo_13_-_Precieux_-_Noob_-_P1400918.jpg" alt="picture of a noob">
+        </main>
+        <footer>
+          <button id="okButton" (click)="okPressed()"> Ok </button>
+        </footer>
+      </div>
+    </cert-pop>
 </section>
