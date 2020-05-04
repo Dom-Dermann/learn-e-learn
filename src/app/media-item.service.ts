@@ -32,18 +32,77 @@ export class MediaItemService {
         },
         {
             id: 2, 
-            name: 'Rate your home office skills', 
+            name: 'Bewerte deinen Home Office Skill', 
             source: 'https://www.youtube.com/embed/yhB2z9XquUU',
             videos: [
                 {
                     id: 1, 
-                    title: "Improve your home office",
+                    title: "Regelmäßiger Tagesrythmus",
+                    text: 'Durch das Homeoffice kann der Tagesrhythmus ganz schön aus dem Gleichgewicht geraten. Auf einmal müssen die Kinder nicht mehr rechtzeitig in der Schule sein, der Arbeitsweg entfällt und schon ist der chaotische Tagesrhythmus drin. Das heißt nicht, dass jeder Mensch früh aufstehen muss. Wichtig ist nur, dass du weiß zu welchen Zeiten du am produktivsten ist und diese Zeit dementsprechend regelmäßig nutzt. Wie gut kennst du "deine Zeiten" und wie regelmäßig nutzt du sie dementsprechend?"',
                     url: "https://www.youtube.com/embed/yhB2z9XquUU"
                 },
                 {
                     id: 2, 
-                    title: "Is course is awesome!",
+                    title: "Ergonomie",
+                    text: `Ein ergonomischer Arbeitsplatz im Büro wird in der Regel vom Arbeitgeber gewährleistet. Zu Hause kann das jedoch ganz anders aussehen, vor allem, wenn du bis dato nicht im Homeoffice gearbeitet hast.
+
+                    Wie bewertest du die Ergonomie deines Arbeitsplatzes, wenn du dir die folgenden Empfehlungen durchlesen:
+                    - Eine ergonomische Tastatur und Maus sind vorhanden
+                    - Dein Stuhl ist höhenverstellbar, erlaubt Positionswechsel und hat Armlehnen
+                    - Der Schreibtisch ist auch höhenverstellbarer und verfügt über ausreichend Fläche (empfehlenswert sind mind 1,28 m² bzw. 160 x 80 cm Arbeitsfläche)
+                    - Die ideale Sitzposition sieht so aus: Ober- und Unterarme bilden einen Winkel von mind. 90°, wobei die Oberarme locker herunterhängen können. Gleichzeitig bilden Ober- und Unterschenkel ebenfalls einen Winkel von mind. 90°, wobei die Oberschenkel voll auf der Sitzfläche aufliegen
+                    - Du hast einen Monitor mit mind. 80 cm Abstand zum Auge
+                    - Dein Arbeitsplatz ist beleuchtet, aber ohne blendende Lichtquellen
+                    - Wenig Lärmquellen im nähren Umfeld`,
                     url: "https://www.youtube.com/embed/5dsGWM5XGdg"
+                },
+                {
+                    id: 3,
+                    title: 'Selbstmanagement',
+                    text: `Konzentriert aber nicht zu lange arbeiten, Pausen nicht vergessen, ohne die leichte Absprache im Büro trotzdem priorisieren und dabei vielleicht sogar Kinder und Mitbewohner jonglieren. Keine leichte Aufgabe!
+
+                    Die Kunst die Balance in alledem zu finden nennen wir Selbstmanagement. Stress pur für dich oder kein Problem?`,
+                    url: ''
+                },
+                {
+                    id: 4, 
+                    title: 'Frische Luft',
+                    text: `Der Hashtag "WeStayHome" wirbt für zu Hause bleiben, frische Luft zu schnappen hat aber diverse Vorteile: Das Draußen-Sein in natürlicher oder naturnaher Umgebung baut Stress ab und lindert Ängste, es macht gelassen und kreativ. Und wer kann das derzeit nicht gebrauchen?!
+
+                    Es muss kein riesiger Waldspaziergang sein, auch viele kleine Gänge vor die Türe können dem Lagerkoller und Bewegungsmangel entgegenwirken. Wie schätzt du dich dahingehend ein?`,
+                    url: ''
+                },
+                {
+                    id: 5, 
+                    title: 'Kommunikation mit Haushaltsmitgliedern',
+                    text: `Wusstest du, dass nach der Lockerung der Quarantänevorschriften in der zentralchinesischen Metropole Xi‘an die Scheidungstermine ausgebucht waren?
+
+                    Das vermehrte Beisammensein durch die Ausgangsbeschränkungen wirkt wie eine Lupe auf die Konflikte mit den Menschen die uns am nähsten sind. Wie gut bist du darin Probleme anzusprechen und Lösungen für sie zu finden?`,
+                    url: ''
+                },
+                {
+                    id: 6, 
+                    title: 'Sport',
+                    text: `Fitnessstudios, Schwimmbäder und andere Sporthallen sind derzeit geschlossen. Umfragen zeigen, dass 31% der Deutschen bereits mehr oder weniger regelmäßig Sport zu Hause betreiben.
+
+                    Tust du was für deine körperliche Gesundheit nötig ist und treibst regelmäßig Sport?`,
+                    url:''
+                },
+                {
+                    id: 7, 
+                    title: 'Soziale Kontakte pflegen',
+                    text: `Soziale Distanzierung wird gefordert im Kampf gegen Corona, jedoch ist dieser Begriff irrefürend. Viel besser ist: räumliche Distanzierung.
+
+                    Menschen sind soziale Wesen und benötigen den Kontakt mit anderen. Bleibst du, im Rahmen des Möglichen, im Kontakt mit Freunden und Familie?`,
+                    url:''
+                }, 
+                {
+                    id: 8,
+                    title: 'Abwechslung suchen neben Arbeit',
+                    text: `Lass dich nicht dazu verleiten ständig Überstunden zu schieben, Projekte übermäßig zu perfektionieren und nur für die Arbeit zu leben. Es kann leicht passieren in einen Trott zu kommen, wenn man immer am selben Ort ist.
+
+                    Suchst du dir neben der Arbeit Projekte, die du z.B. gemeinsam mit deiner Familie oder auch alleine machst?`,
+                    url:''
                 }
             ],
             category: 'Quizz',
