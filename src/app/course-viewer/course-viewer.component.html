@@ -1,5 +1,9 @@
 <section>
-    <h2> {{ courseItem.name }} </h2>
+    <h1> {{ courseItem.name }} </h1>
+    <h2> {{ currentTitle }} </h2>
+
+    <p> {{ currentText }} </p>
+
     <button class="quizz_start" (click)="turnQuizzon()"> Start Quizz </button>
     <div #quizz>
       <quizz-component (submitScore)="submitClicked($event)" class="quizz" #quizzComponent *ngIf="isOn"></quizz-component>

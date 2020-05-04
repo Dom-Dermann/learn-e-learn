@@ -12,6 +12,8 @@ export class CourseViewerComponent implements OnInit {
 
   public courseItem;
   public currentVideoUrl;
+  public currentTitle;
+  public currentText;
   public isOn: boolean = false;
   public score;
   public result_text = "You're a complete noob."
@@ -50,6 +52,8 @@ export class CourseViewerComponent implements OnInit {
     if (this.currentVideo <= this.videosInCourse) {
       const currentVideo = this.courseItem.videos.find( ({id}) => id == this.currentVideo)
       this.currentVideoUrl = currentVideo.url
+      this.currentTitle = currentVideo.title
+      this.currentText = currentVideo.text
     } else {
       // end of course initiated
       this.openPopUp()
