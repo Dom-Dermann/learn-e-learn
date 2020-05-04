@@ -6,7 +6,7 @@ import { MediaItemComponent } from './media-item.component'
 import { MediaItemListComponent } from './media-item-list.component'
 import { FavoriteDirective } from './favorite.directive';
 import { categoryListPipe } from './category-list.pipe';
-import { lookupListToken, lookupList } from './providers';
+import { lookupListToken, lookupList, colors } from './providers';
 import { NavBarComponent } from './nav-bar/nav-bar.component'
 import { routing } from './app.routing';
 import { PipesModule } from './pipes/pipes.module';
@@ -30,7 +30,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule
   ],
   providers: [
-    { provide: lookupListToken, useValue: lookupList}
+    { provide: lookupListToken, useValue: lookupList},
+    { provide: lookupListToken, useValue: colors}
   ],
   bootstrap: [AppComponent]
 })

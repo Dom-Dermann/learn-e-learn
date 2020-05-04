@@ -4,12 +4,12 @@ ul {
     padding: 0;
     overflow: hidden;
     border-radius: 5px;
-    background-color: #333;
+    background-color: #686868;
 }
 
 li {
     float: left;
-    border-right: 1px solid #E9C46A;
+    border-right: 1px solid #5183FC;
 }
 
 li:last-child {
@@ -18,16 +18,16 @@ li:last-child {
 
 li a {
     display: block;
-    color: #E9C46A;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 li a:hover {
-    background-color: #264653;
+    background-color: #4059AD;
 }
 
 .active {
-    background-color: #2A9D8F;
+    background-color: #5183FC;
 }
