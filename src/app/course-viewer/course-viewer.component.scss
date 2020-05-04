@@ -17,9 +17,13 @@
     height: 100%;
 }
 
+h1 {
+    color: #4059AD;
+    margin-left: 50px;
+}
+
 h2 {
     display: inline-block;
-    margin-left: 20px;
 }
 
 .quizz_start {
@@ -37,4 +41,12 @@ h2 {
 
 #certPic {
     width: 250px;
+}
+
+#writtenContent {
+    border-style: groove;
+    border-width: 3px;
+    border-color: #4059AD;
+    margin: 10px 50px;
+    padding: 20px;
 }

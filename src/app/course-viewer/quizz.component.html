@@ -1,5 +1,5 @@
 <h2> Take the quizz to master this section </h2>
-<p class="counter"> Current score: {{ score }} </p>
+<p class="counter" *ngIf="quizzType === 'multiple'"> Current score: {{ score }} </p>
 
 <div id="question"> {{ currentQuestion }} </div>
 
