@@ -16,11 +16,11 @@
     <cert-pop class="my-prompt" [isOpen]="popUpOpen">
         <div class="box">
           <header>
-            <span class="title">Your home office score</span>
+            <span class="title">Deine Home Office Bewertung</span>
           </header>
           <main>
-            <h2>Congrats, your score is : {{score}}</h2>
-            <p>{{result_text}}</p>
+            <h2>Glückwunsch, deine Bewertung ist: {{score}} <br/> Das macht dich zum {{ result_category }}</h2>
+            <p>{{ result_text }}</p>
             <img id="certPic" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Japan_Expo_13_-_Precieux_-_Noob_-_P1400918.jpg" alt="picture of a noob">
           </main>
           <footer>

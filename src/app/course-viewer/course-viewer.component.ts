@@ -16,7 +16,8 @@ export class CourseViewerComponent implements OnInit {
   public currentTitle;
   public currentText;
   public score;
-  public result_text = "You're a complete noob."
+  public result_category;
+  public result_text = "You're a complete noob.";
 
   // toggle elements
   public showQuizzButton = true;
@@ -37,6 +38,7 @@ export class CourseViewerComponent implements OnInit {
       let mediaItems;
       mediaItems = this.mediaItemService.get();
       this.courseItem = mediaItems.find( ({id}) => id == courseId)
+      console.log(this.courseItem)
       this.videosInCourse = this.courseItem.videos.length
       this.displayNextpage()
     })
@@ -62,7 +64,20 @@ export class CourseViewerComponent implements OnInit {
       this.currentTitle = currentVideo.title
       this.currentText = currentVideo.text
     } else {
-      // end of course initiated
+      // end of course initiated: calculate score, category and text then display in pop up
+      if (this.score > 60 && this.score <= 80) {
+        this.result_category = this.courseItem.result_categories[0]
+        this.result_text = this.courseItem.result_text[0]
+      } else if (this.score > 40 && this.score <= 60){
+        this.result_category = this.courseItem.result_categories[1]
+        this.result_text = this.courseItem.result_text[1]
+      } else if (this.score > 20 && this.score <= 40) {
+        this.result_category = this.courseItem.result_categories[2]
+        this.result_text = this.courseItem.result_text[2]
+      } else {
+        this.result_category = this.courseItem.result_categories[3]
+        this.result_text = this.courseItem.result_text[3]
+      }
       this.openPopUp()
     }
   }
