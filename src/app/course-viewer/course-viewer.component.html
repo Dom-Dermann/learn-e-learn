@@ -4,7 +4,7 @@
 
     <p> {{ currentText }} </p>
 
-    <button class="quizz_start" (click)="turnQuizzon()"> Start Quizz </button>
+    <button class="quizz_start" *ngIf="showQuizzButton" (click)="turnQuizzon()"> Start Quizz </button>
     <div #quizz>
       <quizz-component (submitScore)="submitClicked($event)" class="quizz" #quizzComponent *ngIf="isOn"></quizz-component>
   </div>

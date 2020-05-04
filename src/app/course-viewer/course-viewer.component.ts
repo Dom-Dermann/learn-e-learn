@@ -10,16 +10,22 @@ import { QuizzStateService } from './quizz-state.service';
 })
 export class CourseViewerComponent implements OnInit {
 
+  // displaying variables
   public courseItem;
   public currentVideoUrl;
   public currentTitle;
   public currentText;
-  public isOn: boolean = false;
   public score;
   public result_text = "You're a complete noob."
+
+  // toggle elements
+  public showQuizzButton = true;
+  public isOn: boolean = false;
+  popUpOpen = false;                            // determines if cert-pop pop-up is shown
+
+  // keeping track
   private currentVideo = 1;
   private videosInCourse;                       // amount of videos in this course  
-  popUpOpen = false;                            // determines if cert-pop pop-up is shown
   @ViewChild('quizz') quizzDiv: ElementRef;
 
   constructor(private route: ActivatedRoute, private mediaItemService: MediaItemService, private quizzStateService: QuizzStateService) { }
@@ -40,6 +46,7 @@ export class CourseViewerComponent implements OnInit {
     this.isOn = true;
     // Todo: find a way to now hardcode the wait time. 
     setTimeout( ()=> this.quizzDiv.nativeElement.scrollIntoView({behavior: "smooth", block: "center"}), 500);
+    this.showQuizzButton = false;
   }
 
   submitClicked(score) {
