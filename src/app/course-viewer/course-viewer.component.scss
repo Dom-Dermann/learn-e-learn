@@ -10,6 +10,16 @@
     }
 }
 
+.container {
+    display: flex;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
 .videoViewer {
     .videoViewer {
         width: 260px;

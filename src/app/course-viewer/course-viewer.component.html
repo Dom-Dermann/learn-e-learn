@@ -1,19 +1,22 @@
-<section>
-  <h1> {{ courseItem.name }} </h1>
+<h1> {{ courseItem.name }} </h1>
+<section class="container">
+  <div class="flex-container">
+    <div id="writtenContent">
+      <h2> {{ currentTitle }} </h2>
+      <p> {{ currentText }} </p>
+    </div>
 
-  <div id="writtenContent">
-    <h2> {{ currentTitle }} </h2>
-    <p> {{ currentText }} </p>
+    <button class="quizz_start" *ngIf="showQuizzButton" (click)="turnQuizzon()"> Start Quizz </button>
+    <div id="quizz">
+      <quizz-component (submitScore)="submitClicked($event)" class="quizz" id="quizzComponent" *ngIf="isOn"></quizz-component>
+    </div>
   </div>
 
-  <button class="quizz_start" *ngIf="showQuizzButton" (click)="turnQuizzon()"> Start Quizz </button>
-  <div id="quizz">
-    <quizz-component (submitScore)="submitClicked($event)" class="quizz" id="quizzComponent" *ngIf="isOn"></quizz-component>
-  </div>
-
-  <div class="videoViewer">
-    <iframe [src]="currentVideoUrl | safe" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
+  <div class="flex-container">
+    <div class="videoViewer">
+      <iframe [src]="currentVideoUrl | safe" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>  
 
   <cert-pop class="my-prompt" [isOpen]="popUpOpen">
       <div class="box">
