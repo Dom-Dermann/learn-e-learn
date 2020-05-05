@@ -143,19 +143,33 @@ export class MediaItemService {
                 }
             ],
             result_categories: [
-                "Home Office Pro", 
-                "Homr Office Semi-Pro", 
-                "Home Office Beginner", 
-                "Home Office Noob"
-            ],
-            result_text: [
-                `Am Schreibtisch mit großen Monitor und höhenverstellbarem Stuhl sitzt es sich auch nach 8 Stunden noch gut. Dein Rücken ist gestählt, die Haushaltsmitglieder kennen die Regeln und halten sich an sie. Die Fotos deiner Ausflüge inspirieren dein Umfeld, mit denen du den Kontakt weiter digital hältst. Was die derzeitige Situation auch mit sich bringt, souverän gehst du damit um und bleibst entspannt.
+                {
+                    id: 1,
+                    description: "Home Office Pro",
+                    text: `Am Schreibtisch mit großen Monitor und höhenverstellbarem Stuhl sitzt es sich auch nach 8 Stunden noch gut. Dein Rücken ist gestählt, die Haushaltsmitglieder kennen die Regeln und halten sich an sie. Die Fotos deiner Ausflüge inspirieren dein Umfeld, mit denen du den Kontakt weiter digital hältst. Was die derzeitige Situation auch mit sich bringt, souverän gehst du damit um und bleibst entspannt.
 
-                "I have nothing more to teach you!"`,
-                `Du hast den Dreh schon ganz gut raus wenn es um das Arbeiten zu Hause geht. Dir kann man kaum noch etwas vormachen in deinem Alltag und auch das Drumherum mit den Haushaltsmitgliedern sowie dem Ausgleich groovt sich langsam ein. An manchen Stellschrauben kannst du drehen aber die wichtigsten Hürden sind geschafft!`,
-                `Du hast die ersten Babyschritte gemacht um dein Home Office einzurichten und tust dein Bestes. Dennoch gibt es viel Potential zur Verbesserung und du weißt es!`,
-                `Dein Laptop ist gebrechlich und auf der Couch sitzend krümmst du dich über das Touchpad und starrst auf den winzigen Monitor. Den Rest des Tages verbringst du auch auf der Couch, weinst den guten alten Zeiten nach und versinkst immer tiefer in der Misere. Wir sagen dir ganz klar: So kann das nicht weiter gehen!!`
-            ]
+                    "I have nothing more to teach you!"`,
+                    picture: "./assets/professional.jpg"
+                },
+                {
+                    id: 2, 
+                    description: "Home Office Semi-Pro",
+                    text: `Du hast den Dreh schon ganz gut raus wenn es um das Arbeiten zu Hause geht. Dir kann man kaum noch etwas vormachen in deinem Alltag und auch das Drumherum mit den Haushaltsmitgliedern sowie dem Ausgleich groovt sich langsam ein. An manchen Stellschrauben kannst du drehen aber die wichtigsten Hürden sind geschafft!`,
+                    picture: "./assets/semipro.jpg"
+                },
+                {
+                    id: 3,
+                    description: "Home Office Beginner",
+                    text: `Du hast die ersten Babyschritte gemacht um dein Home Office einzurichten und tust dein Bestes. Dennoch gibt es viel Potential zur Verbesserung und du weißt es!`,
+                    picture: "./assets/beginner.jpg"
+                },
+                {
+                    id: 4, 
+                    description: "Home Office Noob",
+                    text: `Dein Laptop ist gebrechlich und auf der Couch sitzend krümmst du dich über das Touchpad und starrst auf den winzigen Monitor. Den Rest des Tages verbringst du auch auf der Couch, weinst den guten alten Zeiten nach und versinkst immer tiefer in der Misere. Wir sagen dir ganz klar: So kann das nicht weiter gehen!!`,
+                    picture: "./assets/noob.jpg"
+                }
+            ],
         }
     ];
 

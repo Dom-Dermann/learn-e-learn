@@ -18,6 +18,7 @@ export class CourseViewerComponent implements OnInit {
   public score;
   public result_category;
   public result_text = "You're a complete noob.";
+  public result_picture;
 
   // toggle elements
   public showQuizzButton = true;
@@ -66,20 +67,23 @@ export class CourseViewerComponent implements OnInit {
     } else {
       // end of course initiated: calculate score, category and text then display in pop up
       if (this.score > 60 && this.score <= 80) {
-        this.result_category = this.courseItem.result_categories[0]
-        this.result_text = this.courseItem.result_text[0]
+        this.setCategory(1)
       } else if (this.score > 40 && this.score <= 60){
-        this.result_category = this.courseItem.result_categories[1]
-        this.result_text = this.courseItem.result_text[1]
+        this.setCategory(2)
       } else if (this.score > 20 && this.score <= 40) {
-        this.result_category = this.courseItem.result_categories[2]
-        this.result_text = this.courseItem.result_text[2]
+        this.setCategory(3)
       } else {
-        this.result_category = this.courseItem.result_categories[3]
-        this.result_text = this.courseItem.result_text[3]
+        this.setCategory(3)
       }
       this.openPopUp()
     }
+  }
+
+  setCategory(cat_id) {
+    const category = this.courseItem.result_categories.find( ({id}) => id == cat_id)
+    this.result_category = category.description
+    this.result_text = category.text
+    this.result_picture = category.picture
   }
 
   openPopUp() {
