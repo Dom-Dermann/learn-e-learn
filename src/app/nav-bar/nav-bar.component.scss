@@ -6,12 +6,14 @@ ul {
     border-radius: 5px;
     background-color: #686868;
     position: sticky;
-    top: 2px;
+    top: 45px;
+    display: flex;
 }
 
 li {
     float: left;
     border-right: 1px solid #5183FC;
+    flex: auto;
 }
 
 li:last-child {

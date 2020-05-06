@@ -1,6 +1,6 @@
 <h1> {{ courseItem.name }} </h1>
 <section class="container">
-  <div class="flex-container">
+  <div class="grid-item">
     <div id="writtenContent">
       <h2> {{ currentTitle }} </h2>
       <p> {{ currentText }} </p>
@@ -12,25 +12,26 @@
     </div>
   </div>
 
-  <div class="flex-container">
+  <div class="grid-item">
     <div class="videoViewer">
       <iframe [src]="currentVideoUrl | safe" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>  
-
-  <cert-pop class="my-prompt" [isOpen]="popUpOpen">
-      <div class="box">
-        <header>
-          <span class="title">Deine Home Office Bewertung</span>
-        </header>
-        <main>
-          <h2>Glückwunsch, deine Bewertung ist: {{score}} <br/> Das macht dich zum {{ result_category }}</h2>
-          <p>{{ result_text }}</p>
-          <img id="certPic" src="{{result_picture}}" alt="picture of a noob">
-        </main>
-        <footer>
-          <button id="okButton" (click)="okPressed()"> Ok </button>
-        </footer>
-      </div>
-    </cert-pop>
 </section>
+
+
+<cert-pop class="my-prompt" [isOpen]="popUpOpen">
+  <div class="box">
+    <header>
+      <span class="title">Deine Home Office Bewertung</span>
+    </header>
+    <main>
+      <h2>Glückwunsch, deine Bewertung ist: {{score}} <br/> Das macht dich zum {{ result_category }}</h2>
+      <p>{{ result_text }}</p>
+      <img id="certPic" src="{{result_picture}}" alt="picture of a noob">
+    </main>
+    <footer>
+      <button id="okButton" (click)="okPressed()"> Ok </button>
+    </footer>
+  </div>
+</cert-pop>
