@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, Input } from "@angular/core";
+import { Component, Output, EventEmitter, Input, ViewChild } from "@angular/core";
 import { ActivatedRoute } from '@angular/router';
 import { MediaItemService } from '../media-item.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -15,12 +15,14 @@ export class QuizzComponent {
     public answers: String[];
     public quizzType;
     public score = 0;
+    public sliderValue = 1;
     private questionList;
     private questionObject;
     formSlide: FormGroup;
     formMultiple: FormGroup;
     @Input() resetScore: boolean;
     @Output() submitScore = new EventEmitter(); 
+    @ViewChild('slider')slider;
   
     constructor(private route: ActivatedRoute, private mediaItemService: MediaItemService, private formBuilder: FormBuilder, private quizzStateService: QuizzStateService) { }
   
@@ -63,5 +65,6 @@ export class QuizzComponent {
       this.score = this.quizzStateService.getHomoScore();
       this.submitScore.emit(this.score);
       this.currentQuestion = this.questionObject.question
+      this.slider.value = 1;
     }
 }

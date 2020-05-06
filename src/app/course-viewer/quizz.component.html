@@ -18,13 +18,14 @@
 <div>
   <form *ngIf="quizzType === 'slider'" [formGroup]="formSlide">
     <span id="min">1</span>
-    <mat-slider 
+    <mat-slider
+                #slider
                 formControlName="sliderAnswer"
                 [max]=10 
                 [min]=1 
                 [step]=1
                 [thumbLabel]="true"
-                [value]=1></mat-slider>
+                [value] = "sliderValue"></mat-slider>
     <span id="max">10</span>
     <button id="submitButton" (click)="submitSlideClicked(formSlide.value)" type="submit"> Abschicken </button>
   </form>
