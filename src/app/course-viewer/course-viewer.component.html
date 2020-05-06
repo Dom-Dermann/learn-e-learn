@@ -1,14 +1,11 @@
 <h1> {{ courseItem.name }} </h1>
 <section class="container">
+
+
   <div class="grid-item">
     <div id="writtenContent">
       <h2> {{ currentTitle }} </h2>
       <p> {{ currentText }} </p>
-    </div>
-
-    <button class="quizz_start" *ngIf="showQuizzButton" (click)="turnQuizzon()"> Start Quizz </button>
-    <div id="quizz">
-      <quizz-component (submitScore)="submitClicked($event)" class="quizz" id="quizzComponent" *ngIf="isOn"></quizz-component>
     </div>
   </div>
 
@@ -16,7 +13,14 @@
     <div class="videoViewer">
       <iframe [src]="currentVideoUrl | safe" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-  </div>  
+  </div> 
+
+  <div class="grid-item">
+    <button class="quizz_start" *ngIf="showQuizzButton" (click)="turnQuizzon()"> Start Quizz </button>
+    <div id="quizz">
+      <quizz-component (submitScore)="submitClicked($event)" class="quizz" id="quizzComponent" *ngIf="isOn"></quizz-component>
+    </div>
+  </div> 
 </section>
 
 
