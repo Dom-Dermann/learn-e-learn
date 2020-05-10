@@ -19,11 +19,14 @@ export class CourseViewerComponent implements OnInit {
   public result_category;
   public result_text = "You're a complete noob.";
   public result_picture;
+  public introTitle;
+  public introText;
 
   // toggle elements
   public showQuizzButton = true;
   public isOn: boolean = false;
-  popUpOpen = false;                            // determines if cert-pop pop-up is shown
+  public popUpOpen = false;                            // determines if cert-pop pop-up is shown
+  public introPopOpen = false;                   // determines if intro-pop pop-up is shown
 
   // keeping track
   private currentVideo = 1;
@@ -42,6 +45,12 @@ export class CourseViewerComponent implements OnInit {
       console.log(this.courseItem)
       this.videosInCourse = this.courseItem.videos.length
       this.displayNextpage()
+
+
+      // set intro pop up on first load
+      this.introTitle = this.courseItem.intro.title
+      this.introText = this.courseItem.intro.text
+      this.introPopOpen = true;
     })
   }
   
@@ -93,5 +102,9 @@ export class CourseViewerComponent implements OnInit {
   okPressed() {
     this.popUpOpen = false;
     this.quizzStateService.resetHomoScore()
+  }
+
+  introOk() {
+    this.introPopOpen = false;
   }
 }

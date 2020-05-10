@@ -34,6 +34,13 @@ export class MediaItemService {
             id: 2, 
             name: 'Bewerte deinen Home Office Skill', 
             source: 'https://www.youtube.com/embed/yhB2z9XquUU',
+            intro: 
+            {
+                title: "Einleitung", 
+                text: `Vollzeit im Homeoffice zu arbeiten ist für viele Neuland. Doch sicherlich hat mittlerweile auch der eine oder andere gemerkt, dass das Arbeiten im Homeoffice ganz anders abläuft als im Büro.
+
+                Wir haben für euch die wichtigsten Aspekte von Homeoffice recherchiert und ein Quizz geschrieben. Wie gut sind deine Homeoffice skills?`
+            },
             videos: [
                 {
                     id: 1, 

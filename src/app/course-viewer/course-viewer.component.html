@@ -1,7 +1,23 @@
 <h1> {{ courseItem.name }} </h1>
+
+<!-- intro pop up -->
+<cert-pop class="intro-pop" [isOpen]="introPopOpen">
+  <div class="box">
+    <header>
+      <span class="title">Intro Pop Up</span>
+    </header>
+    <main>
+      <h2> {{ introTitle }} </h2>
+      <p>{{ introText }}</p>
+    </main>
+    <footer>
+      <button id="okButton" (click)="introOk()"> Ok </button>
+    </footer>
+  </div>
+</cert-pop>
+
+<!-- grid container -->
 <section class="container">
-
-
   <div class="grid-item">
     <div id="writtenContent">
       <h2> {{ currentTitle }} </h2>
@@ -39,3 +55,5 @@
     </footer>
   </div>
 </cert-pop>
+
+
